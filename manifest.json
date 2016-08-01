@@ -1,23 +1,37 @@
 {
-	"name": "Add to Are.na",
-	"version": "0.1.6",
-	"manifest_version" : 2,
-	"description": "Are.na extension for Chrome. Assemble new ideas with text, links, articles, images and more.",
-	"background" : {
-		"page" : "background.html"
+	"name": "Are.na",
+	"version": "0.2.0",
+	"manifest_version": 2,
+	"description": "Assemble and connect information.",
+	"background": {
+		"page": "background.html"
 	},
 	"browser_action": {
-   "default_icon": "icons/icon-48.png"
-  },
+		"default_icon": "img/icon-128.png",
+		"default_title": "Are.na"
+	},
 	"content_scripts": [{
 		"matches": ["<all_urls>"],
-		"js": ["lib/jquery-2.1.1.min.js","scripts/main.js"],
+		"js": [
+			"js/jquery-2.1.1.min.js",
+			"js/context.js"
+		],
 		"run_at": "document_idle"
 	}],
-	"permissions": [ "tabs", "contextMenus", "webNavigation", "<all_urls>", "http://*/*", "https://*/*", "storage", "identity"],
+	"permissions": [
+		"activeTab",
+		"contextMenus",
+		"webNavigation",
+		"<all_urls>",
+		"http://*/*",
+		"https://*/*",
+		"storage",
+		"identity"
+	],
 	"icons": {
-		"16": "icons/icon-16.png",
-		"48": "icons/icon-48.png",
-		"128": "icons/icon-120.png"
-	}
+		"16": "img/icon-16.png",
+		"48": "img/icon-48.png",
+		"128": "img/icon-128.png"
+	},
+	"web_accessible_resources": ["css/style.css"]
 }

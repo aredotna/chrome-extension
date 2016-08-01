@@ -1,0 +1,53 @@
+#arena_frame,
+#arena_div {
+		overflow: hidden !important;
+		width: 300px !important;
+		height: 420px !important;
+		position: fixed !important;
+		top: 0px !important;
+		right: 0px !important;
+		border: none !important;
+}
+
+#arena_frame.is-expanded {
+	height: 670px !important;
+}
+
+#arena_frame {
+	display: block !important;
+	margin: 12px 15px 0 0 !important;
+	border: 1px solid #efefef !important;
+	z-index: 9999999998 !important;
+	background: rgba(255, 255, 255, 0.75) !important;
+	box-shadow: 3px 4px 10px rgba(0, 0, 0, .4) !important;
+}
+
+#arena_frame:hover {
+	background: rgba(255, 255, 255, 0.9) !important;
+	box-shadow: 3px 4px 10px rgba(0, 0, 0, .5) !important;
+}
+
+#arena_frame.is-expanded {
+	height: 670px !important;
+}
+
+#arena_frame {
+	z-index: 9999999998 !important;
+	background: rgba(255, 255, 255, 0.75) !important;
+	box-shadow: 3px 4px 10px rgba(0, 0, 0, .4) !important;
+}
+
+#arena_frame:hover {
+	background: rgba(255, 255, 255, 0.9) !important;
+	box-shadow: 3px 4px 10px rgba(0, 0, 0, .5) !important;
+}
+
+#arena_div {
+	z-index: 9999999999 !important;
+	display: none !important;
+	opacity: 0 !important;
+}
+
+#arena_frame ul li.tab--container__nav__item {
+	padding: 0 margin 0 10px !important;
+}
