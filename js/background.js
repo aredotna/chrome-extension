@@ -15,5 +15,10 @@ chrome.contextMenus.create({
 });
 
 chrome.browserAction.onClicked.addListener(function(tab) {
-	chrome.tabs.executeScript(tab.id, {file: "js/button.js"});
+	chrome.tabs.sendMessage(tab.id, {
+		text: "open:dialog",
+		options: { srcUrl: tab.url },
+		title: tab.title,
+		url: tab.url
+	}, function(content){});
 });
