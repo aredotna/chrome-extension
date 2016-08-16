@@ -44,8 +44,8 @@
 
   function closeBookmarklet() {
     if (markletFrame) document.body.removeChild(markletFrame);
-    if (markletDiv) document.body.removeNode(markletDiv);
-    if (markletStyle) document.body.removeNode(markletStyle);
+    if (markletDiv) document.body.parentNode.removeChild(markletDiv);
+    if (markletStyle) document.body.parentNode.removeChild(markletStyle);
   }
 
   function createStyle() {
