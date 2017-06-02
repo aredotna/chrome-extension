@@ -1,16 +1,12 @@
 #arena_frame,
 #arena_div {
   overflow: hidden !important;
-  width: 300px !important;
-  height: 420px !important;
+  width: 335px !important;
+  height: 475px !important;
   position: fixed !important;
   top: 0px !important;
   right: 0px !important;
   border: none !important;
-}
-
-#arena_frame.is-expanded {
-  height: 670px !important;
 }
 
 #arena_frame {
@@ -28,7 +24,7 @@
 }
 
 #arena_frame.is-expanded {
-  height: 670px !important;
+  height: 710px !important;
 }
 
 #arena_frame {
