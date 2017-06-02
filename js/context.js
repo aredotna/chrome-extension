@@ -71,7 +71,7 @@
   }
 
   function sendMessage(data) {
-    markletFrame.contentWindow.postMessage(data, "*");
+    (markletFrame && markletFrame.contentWindow).postMessage(data, "*");
   }
 
 
