@@ -1,6 +1,6 @@
 {
 	"name": "Are.na",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"manifest_version": 2,
 	"description": "Assemble and connect information.",
 	"background": {
