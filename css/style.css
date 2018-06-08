@@ -40,8 +40,8 @@
 
 #arena_div {
   z-index: 9999999999 !important;
-  display: none !important;
-  opacity: 0 !important;
+  display: none;
+  background: rgba(255, 255, 255, 0.01) !important;
 }
 
 #arena_frame ul li.tab--container__nav__item {
