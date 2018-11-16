@@ -7,6 +7,9 @@
   top: 0px !important;
   right: 0px !important;
   border: none !important;
+  overflow-x:hidden;
+  overflow-y:auto;
+  max-height:calc(100% - 50px);
 }
 
 #arena_frame {
@@ -41,7 +44,10 @@
 #arena_div {
   z-index: 9999999999 !important;
   display: none;
-  background: rgba(255, 255, 255, 0.01) !important;
+  background: rgba(255, 255, 255, 0.91) !important;
+  opacity: 0;
+  align-items: center; 
+  justify-content: center;
 }
 
 #arena_frame ul li.tab--container__nav__item {

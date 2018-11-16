@@ -38,26 +38,27 @@
   function createTarget() {
     markletDiv = document.createElement("div");
     markletDiv.id = "arena_div";
-
+    message = document.createElement("h1")
+    message.innerHTML = ('Drag and drop text or images you want to save.');
+    markletDiv.appendChild(message);
     document.body.appendChild(markletDiv);
   }
 
   function closeBookmarklet() {
     if (markletFrame) document.body.removeChild(markletFrame);
-    if (markletDiv) document.body.parentNode.removeChild(markletDiv);
-    if (markletStyle) document.body.parentNode.removeChild(markletStyle);
+    if (markletDiv) document.body.removeChild(markletDiv);
+    if (markletStyle) document.body.removeChild(markletStyle);
   }
 
   function createStyle() {
     var url = chrome.extension.getURL("css/style.css");
-    var head = document.head;
     var link = document.createElement('link');
 
     link.type = 'text/css';
     link.rel = 'stylesheet';
     link.href = url;
 
-    head.appendChild(link);
+    document.body.appendChild(link);
   }
 
   function closest(that, tagname) {
@@ -132,11 +133,15 @@
       e.dataTransfer.setData("text/html", parentHTML.outerHTML);
     }
 
-    markletDiv.style.display = "block";
+    markletDiv.style.display = "flex";
+    markletDiv.style.opacity = 1;
+    markletFrame.style.display = "none";
   }
 
   function stopDrag(e) {
     markletDiv.style.display = "none";
+    markletDiv.style.opacity = 0;
+    markletFrame.style.display = "block";
   }
 
   function dragOver(e) {
