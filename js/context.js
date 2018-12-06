@@ -16,7 +16,7 @@
   }
 
   function getURL(msg) {
-    baseUrl = "http://localhost:5000/save/";
+    baseUrl = "https://www.are.na/save/";
 
     if(msg.options.srcUrl) {
       path = msg.options.srcUrl;
