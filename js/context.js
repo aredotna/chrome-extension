@@ -120,7 +120,6 @@
     });
 
     if (typeof e.dataTransfer.getData("text/html") == "undefined" || e.target.tagName == "IMG") {
-
       targetParent = closest(e.target, "A") || document.createElement('A');
 
       parentHTML = targetParent.cloneNode(false);
