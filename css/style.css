@@ -13,7 +13,7 @@
 }
 
 #arena_frame {
-  display: block !important;
+  display: block;
   margin: 12px 15px 0 0 !important;
   border: 1px solid #efefef !important;
   z-index: 9999999998 !important;
@@ -48,6 +48,18 @@
   opacity: 0;
   align-items: center; 
   justify-content: center;
+  margin: 12px 15px 0 0 !important;
+}
+
+#arena_div h1 {
+  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; 
+  color: #9d9d9d; 
+  font-weight: normal; 
+  padding: 40px; 
+  -webkit-font-smoothing: antialiased; 
+  text-align: center; 
+  display: inline-block; 
+  font-size: 1.5em;
 }
 
 #arena_frame ul li.tab--container__nav__item {

@@ -16,7 +16,7 @@
   }
 
   function getURL(msg) {
-    baseUrl = "https://www.are.na/save/";
+    baseUrl = "http://localhost:5000/save/";
 
     if(msg.options.srcUrl) {
       path = msg.options.srcUrl;
@@ -120,7 +120,6 @@
     });
 
     if (typeof e.dataTransfer.getData("text/html") == "undefined" || e.target.tagName == "IMG") {
-
       targetParent = closest(e.target, "A") || document.createElement('A');
 
       parentHTML = targetParent.cloneNode(false);
