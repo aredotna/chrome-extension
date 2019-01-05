@@ -8,7 +8,8 @@ chrome.contextMenus.create({
         text: "open:dialog",
         options: options,
         title: tabs[0].title,
-        url: tabs[0].url
+        url: tabs[0].url,
+        tab_id: tabs[0].id
       }, function(content){});
     });
   }
@@ -19,6 +20,7 @@ chrome.browserAction.onClicked.addListener(function(tab) {
     text: "open:dialog",
     options: { srcUrl: tab.url },
     title: tab.title,
-    url: tab.url
+    url: tab.url,
+    tab_id: tab.id
   }, function(content){});
 });

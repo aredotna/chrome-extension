@@ -1,5 +1,7 @@
 (function(){
 
+  tabsWithOpenIframes = {};
+
   function createFrame(msg) {
     markletFrame = document.createElement("iframe");
     markletFrame.name = markletFrame.id = "arena_frame";
@@ -11,6 +13,12 @@
         title: window.document.title
       });
     }
+
+    hiddenTabId = document.createElement("input");
+    hiddenTabId.setAttribute("type", "hidden");
+    hiddenTabId.setAttribute("value", msg.tab_id);
+
+    markletFrame.appendChild(hiddenTabId);
 
     document.body.appendChild(markletFrame);
   }
@@ -45,7 +53,11 @@
   }
 
   function closeBookmarklet() {
-    if (markletFrame) document.body.removeChild(markletFrame);
+    if (markletFrame) {
+      hiddenTabId = markletFrame.children[0].getAttribute("value");
+      tabsWithOpenIframes[hiddenTabId] = false;
+      document.body.removeChild(markletFrame);
+    }
     if (markletDiv) document.body.removeChild(markletDiv);
     if (markletStyle) document.body.removeChild(markletStyle);
   }
@@ -200,7 +212,11 @@
   document.onkeyup = function(e) {
     if (e || window.event) {
       e = window.event;
-      if (e.keyCode == 27) closeBookmarklet();
+      if (e.keyCode == 27) {
+        try {
+          closeBookmarklet();
+        } catch (err) {}
+      }
     }
   };
 
@@ -237,7 +253,14 @@
 
   chrome.runtime.onMessage.addListener(function(msg, sender, sendResponse) {
     if (msg.text && (msg.text == "open:dialog")) {
+      if (tabsWithOpenIframes[msg.tab_id]) {
+        try {
+          closeBookmarklet();
+          return
+        } catch (err) {} // fall through to opening
+      }
       initialize(msg);
+      tabsWithOpenIframes[msg.tab_id] = true;
     }
   });
 
